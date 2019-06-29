@@ -1,0 +1,13 @@
+a {
+  color: #1111cc;
+
+  &:hover {
+    > img {
+      opacity: $opacity-link-hover;
+    }
+
+    > span {
+      text-decoration: underline;
+    }
+  }
+}
