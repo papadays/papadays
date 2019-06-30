@@ -7,16 +7,33 @@
 @mixin setGridDefault($isHome: false) {
   @if $isHome {
     grid-template:
-      "header header header" 80px
-      "left main right" auto
-      "footer footer footer" 50px /
-      100px calc(100% - 100px - 300px) 300px;
+      "header header" #{$height-header}
+      "main aside" auto
+      "footer footer" #{$height-footer} /
+      #{$width-content-main} #{$width-content-aside};
+
+    @include responsive() {
+      grid-template:
+        "header" (#{$height-header} / 2)
+        "main" auto
+        "footer" (#{$height-footer} / 2) /
+        100%;
+    }
   } @else {
     grid-template:
-      "header header header" 80px
-      "nav nav nav" 80px
-      "left main right" auto
-      "footer footer footer" 50px /
-      100px calc(100% - 100px - 300px) 300px;
+      "header header" #{$height-header}
+      "nav nav" #{$height-nav}
+      "main aside" auto
+      "footer footer" #{$height-footer} /
+      #{$width-content-main} #{$width-content-aside};
+
+    @include responsive() {
+      grid-template:
+        "header" ($height-header / 2)
+        "nav nav" ($height-nav / 2)
+        "main" auto
+        "footer" (#{$height-footer} / 2) /
+        100%;
+    }
   }
 }

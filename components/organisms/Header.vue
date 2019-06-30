@@ -25,7 +25,6 @@ export default class Header extends Vue {
 
 <style lang="scss" scoped>
 header {
-  grid-area: header;
   display: flex;
   justify-content: center;
   align-items: center;

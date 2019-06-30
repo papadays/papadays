@@ -1,5 +1,13 @@
-$width-content-main: 1280px;
+$width-content-main: 900px;
+$width-content-aside: 300px;
+$width-content-max: $width-content-main + $width-content-aside;
 $width-device-tb: 770px;
 $width-device-sp: 480px;
 
+$height-header: 80px;
+$height-nav: 40px;
+$height-footer: 50px;
+
 $opacity-link-hover: 0.8;
+
+$area-list-org: header, nav, main, aside, footer;

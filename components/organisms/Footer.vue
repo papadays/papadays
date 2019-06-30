@@ -8,9 +8,3 @@ import { Component, Vue } from "nuxt-property-decorator";
 @Component
 export default class Footer extends Vue {}
 </script>
-
-<style lang="scss" scoped>
-footer {
-  grid-area: footer;
-}
-</style>

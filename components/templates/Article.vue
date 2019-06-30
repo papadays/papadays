@@ -22,9 +22,3 @@ export default class ArticleTmp extends Vue {
   }) recentList!: Article[];
 }
 </script>
-
-<style lang="scss" scoped>
-main {
-  grid-area: main;
-}
-</style>

@@ -1,3 +1,9 @@
+@each $area in $area-list-org {
+  #{$area} {
+    grid-area: $area;
+  }
+}
+
 a {
   color: #1111cc;
 

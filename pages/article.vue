@@ -18,4 +18,3 @@ import TmpArticle from "~/components/templates/Article.vue";
 })
 export default class PagesArticle extends Vue {}
 </script>
-s

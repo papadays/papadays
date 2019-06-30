@@ -21,9 +21,3 @@ export default class Home extends Vue {
   }) recentList!: Array<Object>;
 }
 </script>
-
-<style lang="scss" scoped>
-main {
-  grid-area: main;
-}
-</style>

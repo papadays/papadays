@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <org-header />
-    <org-aside-left />
     <nuxt />
-    <org-aside-right />
+    <org-aside />
     <org-footer />
   </div>
 </template>
@@ -11,8 +10,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "nuxt-property-decorator";
 import OrgHeader from "~/components/organisms/Header.vue";
-import OrgAsideLeft from "~/components/organisms/AsideLeft.vue";
-import OrgAsideRight from "~/components/organisms/AsideRight.vue";
+import OrgAside from "~/components/organisms/Aside.vue";
 import OrgFooter from "~/components/organisms/Footer.vue";
 
 @Component({
@@ -24,8 +22,7 @@ import OrgFooter from "~/components/organisms/Footer.vue";
   layout: 'home',
   components: {
     OrgHeader,
-    OrgAsideLeft,
-    OrgAsideRight,
+    OrgAside,
     OrgFooter
   }
 })
