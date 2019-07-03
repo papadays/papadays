@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="article in articleList" v-bind:key="article.id">
-      {{ article.title }}
+      {{article.title.rendered}}
     </li>
   </ul>
 </template>

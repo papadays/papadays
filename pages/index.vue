@@ -1,14 +1,12 @@
 <template>
-  <tmp-home
-    :recentList="recentList"
-    :article="article"
-  />
+  <Home />
 </template>
 
 <script lang="ts">
 import { Component, State, Vue } from "nuxt-property-decorator";
-import TmpHome from "~/components/templates/Home.vue";
-import { Article } from "~/types";
+import axios from "axios"
+
+import Home from "~/components/templates/Home.vue";
 
 @Component({
   head() {
@@ -18,15 +16,12 @@ import { Article } from "~/types";
   },
   layout: 'home',
   components: {
-    TmpHome
+    Home
   },
-  created() {
-    this.$store.dispatch('article/getArticle')
-    this.$store.dispatch('article/getArticleListRecent')
+  async created() {
+    const res = await axios.get('http://papadays.xsrv.jp/wp-json/wp/v2/posts?orderby=date')
+    this.$store.commit('setArticleListRecent', res.data)
   },
 })
-export default class PagesHome extends Vue {
-  @State article!: Article
-  @State recentList!: Article[]
-}
+export default class PagesHome extends Vue {}
 </script>

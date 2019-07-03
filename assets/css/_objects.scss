@@ -1,5 +1,6 @@
 #app {
   display: grid;
+  grid-row-gap: $margin-content-space;
   margin: 0 auto;
   max-width: $width-content-max;
 }

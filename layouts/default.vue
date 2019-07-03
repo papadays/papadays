@@ -1,27 +1,27 @@
 <template>
   <div id="app">
-    <org-header />
-    <org-nav />
+    <Header />
+    <Nav />
     <nuxt />
-    <org-aside />
-    <org-footer />
+    <Aside />
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import OrgHeader from "~/components/organisms/Header.vue";
-import OrgNav from "~/components/organisms/Nav.vue";
-import OrgAside from "~/components/organisms/Aside.vue";
-import OrgFooter from "~/components/organisms/Footer.vue";
+import Header from "~/components/organisms/Header.vue";
+import Nav from "~/components/organisms/Nav.vue";
+import Aside from "~/components/organisms/Aside.vue";
+import Footer from "~/components/organisms/Footer.vue";
 
 @Component({
   layout: 'home',
   components: {
-    OrgHeader,
-    OrgNav,
-    OrgAside,
-    OrgFooter
+    Header,
+    Nav,
+    Aside,
+    Footer
   }
 })
 export default class Default extends Vue {}

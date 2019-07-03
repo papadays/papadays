@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <org-header />
+    <Header />
     <nuxt />
-    <org-aside />
-    <org-footer />
+    <Aside />
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "nuxt-property-decorator";
-import OrgHeader from "~/components/organisms/Header.vue";
-import OrgAside from "~/components/organisms/Aside.vue";
-import OrgFooter from "~/components/organisms/Footer.vue";
+import Header from "~/components/organisms/Header.vue";
+import Aside from "~/components/organisms/Aside.vue";
+import Footer from "~/components/organisms/Footer.vue";
 
 @Component({
   head() {
@@ -21,9 +21,9 @@ import OrgFooter from "~/components/organisms/Footer.vue";
   },
   layout: 'home',
   components: {
-    OrgHeader,
-    OrgAside,
-    OrgFooter
+    Header,
+    Aside,
+    Footer
   }
 })
 export default class Home extends Vue {}
@@ -32,5 +32,14 @@ export default class Home extends Vue {}
 <style lang="scss" scoped>
 #app {
   @include setGridDefault(true);
+
+  > .Header {
+    > a {
+      > img {
+        width: 305px;
+        height: 60px;
+      }
+    }
+  }
 }
 </style>
