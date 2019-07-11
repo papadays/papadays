@@ -3,18 +3,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
-import TmpArticle from "~/components/templates/Article.vue";
+import { Component, Vue } from 'nuxt-property-decorator';
+import TmpArticle from '~/components/templates/Article.vue';
 
 @Component({
   head() {
     return {
-      title: 'article'
-    }
+      title: 'article',
+    };
   },
   components: {
-    TmpArticle
-  }
+    TmpArticle,
+  },
 })
 export default class PagesArticle extends Vue {}
 </script>

@@ -42,6 +42,7 @@ const nuxtConfig: NuxtConfiguration = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/my-filter.js'
   ],
 
   /*
@@ -53,6 +54,7 @@ const nuxtConfig: NuxtConfiguration = {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     '@nuxtjs/style-resources',
+    ['@nuxtjs/moment', ['ja']],
   ],
   /*
   ** Axios module configuration
@@ -76,6 +78,18 @@ const nuxtConfig: NuxtConfiguration = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
+        if (!config.module) return
+        config.module.rules.push({
+          test: /\.ts$/,
+          enforce: 'pre',
+          loader: './plugins/my-tslint-loader.js',
+          options: {
+            configFile: 'tslint.json',
+            tsConfigFile: 'tsconfig.json',
+          },
+        })
+      }
     }
   }
 }

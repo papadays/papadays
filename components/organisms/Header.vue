@@ -1,17 +1,16 @@
 <template>
   <header :class="$options._componentTag">
-    <Link
-      url="/"
-      :icon="logoMain"
-    />
+    <Link url="/">
+      <img :src="logoMain" />
+    </Link>
     <input class="input is-rounded" type="text" placeholder="検索キーワード">
   </header>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
+import { Component, Vue } from 'nuxt-property-decorator';
 
-import Link from "~/components/atoms/Link.vue";
+import Link from '~/components/atoms/Link.vue';
 
 @Component({
   components: {
@@ -24,10 +23,13 @@ export default class Header extends Vue {
 </script>
 
 <style lang="scss" scoped>
-header {
+.Header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  grid-area: Header;
+  border-bottom: solid 1px $color-border-secondary;
+  padding: 0 calc((100vw - #{$width-content-max}) / 2);
 
   > .input {
     &.is-rounded {

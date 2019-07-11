@@ -1,21 +1,27 @@
 <template>
-  <ul>
+  <ul :class="$options._componentTag">
     <li v-for="article in articleList" v-bind:key="article.id">
-      {{article.title.rendered}}
+      <ArticleCard
+        :article="article"
+      />
     </li>
   </ul>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "nuxt-property-decorator";
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
+import { Article } from '~/types';
 
-@Component
+import ArticleCard from '~/components/molcules/ArticleCard.vue';
+
+@Component({
+  components: {
+    ArticleCard,
+  },
+})
 export default class ArticleList extends Vue {
   @Prop({
-    default: false
-  }) isHome!: Boolean;
-  @Prop({
-    required: true
-  }) articleList!: Array<Object>;
+    required: true,
+  }) articleList!: Article[];
 }
 </script>

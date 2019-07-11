@@ -8,23 +8,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "nuxt-property-decorator";
-import Header from "~/components/organisms/Header.vue";
-import Aside from "~/components/organisms/Aside.vue";
-import Footer from "~/components/organisms/Footer.vue";
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
+import Header from '~/components/organisms/Header.vue';
+import Aside from '~/components/organisms/Aside.vue';
+import Footer from '~/components/organisms/Footer.vue';
 
 @Component({
   head() {
     return {
-      title: 'home'
-    }
+      title: 'home',
+    };
   },
   layout: 'home',
   components: {
     Header,
     Aside,
-    Footer
-  }
+    Footer,
+  },
 })
 export default class Home extends Vue {}
 </script>

@@ -1,15 +1,32 @@
-$width-content-main: 900px;
+$margin-content-space: 40px;
+$margin-section-space: 30px;
+$margin-list-space: 30px;
+$margin-item-space-default: 10px;
+$margin-item-space-small: 5px;
+$margin-aside-section-space: 20px;
+$padding-section-space: 10px;
+$padding-text-space: 15px 10px;
+$padding-icon-space: 5px 10px;
+$width-content-main: 860px;
 $width-content-aside: 300px;
-$width-content-max: $width-content-main + $width-content-aside;
+$width-content-max: $width-content-main + $width-content-aside + $margin-content-space;
 $width-device-tb: 770px;
 $width-device-sp: 480px;
-
 $height-header: 80px;
 $height-nav: 40px;
 $height-footer: 50px;
-
-$margin-content-space: 40px;
-
+$font-size-h1: 20px;
+$font-size-h2: 18px;
+$font-size-h3: 16px;
+$font-size-default: 14px;
+$font-size-notes: 12px;
 $opacity-link-hover: 0.8;
-
-$area-list-org: header, nav, main, aside, footer;
+$color-text-primary: #333;
+$color-text-secondary: #888;
+$color-text-white: #fff;
+$color-content-primary: #6462DB;
+$color-content-secondary: #9B9D24;
+$color-aside-background: #eef;
+$color-footer-background: #eee;
+$color-border-secondary: #eef;
+$border-radius-content: 5px;

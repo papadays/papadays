@@ -1,4 +1,4 @@
-import { Article } from "~/types";
+import { Article, Category, Tag } from '~/types';
 
 export interface RootState {
   article: Article;
@@ -6,4 +6,6 @@ export interface RootState {
   articleListCategory: Article[];
   articleListTag: Article[];
   articleListSearchWord: Article[];
+  categoryList: Category[];
+  tagList: Tag[];
 }

@@ -2,25 +2,24 @@
   <Home />
 </template>
 
-<script lang="ts">
-import { Component, State, Vue } from "nuxt-property-decorator";
-import axios from "axios"
+<script lang='ts'>
+import { Component, State, Vue } from 'nuxt-property-decorator';
+import axios from 'axios';
 
-import Home from "~/components/templates/Home.vue";
+import Home from '~/components/templates/Home.vue';
 
 @Component({
   head() {
     return {
-      title: 'ホーム'
-    }
+      title: 'ホーム',
+    };
   },
   layout: 'home',
   components: {
-    Home
+    Home,
   },
   async created() {
-    const res = await axios.get('http://papadays.xsrv.jp/wp-json/wp/v2/posts?orderby=date')
-    this.$store.commit('setArticleListRecent', res.data)
+    this.$store.dispatch('putArticleListRecent');
   },
 })
 export default class PagesHome extends Vue {}

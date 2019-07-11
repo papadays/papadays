@@ -9,11 +9,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
-import Header from "~/components/organisms/Header.vue";
-import Nav from "~/components/organisms/Nav.vue";
-import Aside from "~/components/organisms/Aside.vue";
-import Footer from "~/components/organisms/Footer.vue";
+import { Component, Vue } from 'nuxt-property-decorator';
+import Header from '~/components/organisms/Header.vue';
+import Nav from '~/components/organisms/Nav.vue';
+import Aside from '~/components/organisms/Aside.vue';
+import Footer from '~/components/organisms/Footer.vue';
 
 @Component({
   layout: 'home',
@@ -21,8 +21,8 @@ import Footer from "~/components/organisms/Footer.vue";
     Header,
     Nav,
     Aside,
-    Footer
-  }
+    Footer,
+  },
 })
 export default class Default extends Vue {}
 </script>

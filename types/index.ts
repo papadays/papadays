@@ -15,4 +15,20 @@ export class Article {
   };
   categories!: number[];
   tags!: number[];
+  // tslint:disable-next-line
+  _embedded!: object;
+}
+
+export class Category {
+  id!: number;
+  count!: number;
+  name!: string;
+  slug!: string;
+}
+
+export class Tag {
+  id!: number;
+  count!: number;
+  name!: string;
+  slug!: string;
 }
