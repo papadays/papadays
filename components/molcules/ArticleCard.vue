@@ -32,6 +32,8 @@ import Link from '~/components/atoms/Link.vue';
 import CategoryIcon from '~/components/atoms/CategoryIcon.vue';
 import TagList from '~/components/organisms/TagList.vue';
 
+const constants = require('~/plugins/my-constants.js');
+
 @Component({
   components: {
     Link,
@@ -51,8 +53,6 @@ export default class ArticleCard extends Vue {
   display: block;
   width: 100%;
   margin-top: $margin-list-space;
-  border-left: solid 5px $color-border-secondary;
-  padding-left: $padding-section-space;
   border-radius: $border-radius-content;
 
   & > .header {

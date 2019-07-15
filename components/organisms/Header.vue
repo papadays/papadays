@@ -3,7 +3,7 @@
     <Link url="/">
       <img :src="logoMain" />
     </Link>
-    <input class="input is-rounded" type="text" placeholder="検索キーワード">
+    <SearchForm />
   </header>
 </template>
 
@@ -11,10 +11,12 @@
 import { Component, Vue } from 'nuxt-property-decorator';
 
 import Link from '~/components/atoms/Link.vue';
+import SearchForm from '~/components/atoms/SearchForm.vue';
 
 @Component({
   components: {
     Link,
+    SearchForm,
   },
 })
 export default class Header extends Vue {
@@ -31,9 +33,13 @@ export default class Header extends Vue {
   border-bottom: solid 1px $color-border-secondary;
   padding: 0 calc((100vw - #{$width-content-max}) / 2);
 
-  > .input {
-    &.is-rounded {
-      width: 250px;
+  & /deep/ .SearchForm {
+    width: 300px;
+    height: 36px;
+
+    & /deep/ .Button {
+      height: 28px;
+      border-radius: 14px;
     }
   }
 }

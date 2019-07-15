@@ -1,0 +1,1 @@
+export const API_PATH = 'http://papadays.xsrv.jp/wp-json/wp/v2/';

@@ -2,6 +2,8 @@ import { RootState, Article, Category, Tag } from '~/types';
 import { MutationTree, ActionTree } from 'vuex';
 import axios from 'axios';
 
+const constants = require('~/plugins/my-constants.js');
+
 export const state = (): RootState => ({
   article: new Article(),
   articleListRecent: [],
@@ -37,16 +39,16 @@ export const mutations: MutationTree<RootState> = {
 };
 
 export const actions: ActionTree<RootState, RootState> = {
-  async putArticleListRecent({ commit }, context) {
-    const res = await axios.get('http://papadays.xsrv.jp/wp-json/wp/v2/posts?_embed&orderby=date&per_page=5');
+  async putArticleListRecent({ commit, state }, context) {
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&orderby=date&per_page=5`);
     commit('setArticleListRecent', res.data);
   },
-  async putCategoryList({ commit }, context) {
-    const res = await axios.get('http://papadays.xsrv.jp/wp-json/wp/v2/categories');
+  async putCategoryList({ commit, state }, context) {
+    const res = await axios.get(`${constants.API_PATH}categories`);
     commit('setCategoryList', res.data);
   },
-  async putTagList({ commit }, context) {
-    const res = await axios.get('http://papadays.xsrv.jp/wp-json/wp/v2/tags');
+  async putTagList({ commit, state }, context) {
+    const res = await axios.get(`${constants.API_PATH}tags`);
     commit('setTagList', res.data);
   },
 };
