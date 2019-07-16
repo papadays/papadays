@@ -20,7 +20,6 @@ export default class SectionTitle extends Vue {
   background: $color-content-primary;
   color: #fff;
   font-weight: bold;
-  border-radius: $border-radius-content;
   font-size: $font-size-h1;
   line-height: 1;
 

@@ -13,7 +13,7 @@ export default class AsideSectionBox extends Vue {}
 
 <style lang="scss" scoped>
 .AsideSectionBox {
-  background-color: $color-aside-background;
-  border-radius: $border-radius-content;
+  background-color: #fff;
+  border: dashed 3px $color-border-secondary;
 }
 </style>

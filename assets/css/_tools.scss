@@ -9,6 +9,7 @@
     grid-template:
       "Header Header Header Header" #{$height-header}
       ". Main Aside ." auto
+      "About About About About" auto
       "Footer Footer Footer Footer" #{$height-footer} /
       1fr #{$width-content-main} #{$width-content-aside} 1fr;
 
@@ -16,6 +17,7 @@
       grid-template:
         "Header" (#{$height-header} / 2)
         "Main" auto
+        "About" auto
         "Footer" (#{$height-footer} / 2) /
         100%;
     }

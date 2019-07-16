@@ -30,7 +30,6 @@ export default class CategoryIcon extends Vue {
   font-size: $font-size-notes;
   padding: $padding-icon-space;
   border: solid 1px $color-content-primary;
-  border-radius: $border-radius-content;
 
   &:hover {
     background-color: $color-content-primary;

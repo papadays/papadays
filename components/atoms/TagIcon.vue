@@ -28,7 +28,7 @@ export default class TagIcon extends Vue {
   color: $color-text-white;
   padding: 5px 8px 5px 20px;
   font-size: $font-size-notes;
-  border-radius: 10px;
+  border-radius: $border-radius-content;
   font-weight: bold;
   position: relative;
 
@@ -42,7 +42,7 @@ export default class TagIcon extends Vue {
     content: "";
     width: 8px;
     height: 8px;
-    border-radius: 5px;
+    border-radius: $border-radius-content;
     background-color: #fff;
     top: 0;
     bottom: 0;

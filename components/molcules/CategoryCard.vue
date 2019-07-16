@@ -32,12 +32,7 @@ export default class CategoryCard extends Vue {
 
   &:hover {
     text-decoration: none;
-    background-color: $color-content-primary;
-
-    > .name,
-    > .count {
-      color: $color-text-white;
-    }
+    background-color: $color-background-aside;
   }
 
   > .name,

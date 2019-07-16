@@ -30,7 +30,6 @@ export default class Header extends Vue {
   justify-content: space-between;
   align-items: center;
   grid-area: Header;
-  border-bottom: solid 1px $color-border-secondary;
   padding: 0 calc((100vw - #{$width-content-max}) / 2);
 
   & /deep/ .SearchForm {

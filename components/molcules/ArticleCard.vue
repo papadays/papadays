@@ -53,7 +53,6 @@ export default class ArticleCard extends Vue {
   display: block;
   width: 100%;
   margin-top: $margin-list-space;
-  border-radius: $border-radius-content;
 
   & > .header {
     display: flex;

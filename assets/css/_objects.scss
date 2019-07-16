@@ -1,5 +1,6 @@
 #app {
   display: grid;
-  grid-gap: $margin-content-space;
+  grid-gap: 0 $margin-section-space;
   margin: 0 auto;
+  background-color: $color-background-primary;
 }

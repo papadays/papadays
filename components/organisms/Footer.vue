@@ -14,7 +14,6 @@ export default class Footer extends Vue {}
 <style lang="scss" scoped>
 .Footer {
   grid-area: Footer;
-  background-color: $color-footer-background;
   width: 100%;
   margin: 0 auto;
 }
