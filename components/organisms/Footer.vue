@@ -15,7 +15,7 @@ export default class Footer extends Vue {}
 .Footer {
   grid-area: Footer;
   background-color: $color-footer-background;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
 }
 </style>
