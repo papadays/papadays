@@ -39,17 +39,22 @@ export default class SearchForm extends Vue {
   position: relative;
 
   > .input {
+    padding-right: 70px;
+
     &.is-rounded {
       width: 100%;
     }
   }
 
-  & /deep/ .Button {
+  & ::v-deep .Button {
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 4px;
+    right: 2px;
     margin: auto;
+    height: 90%;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
   }
 }
 </style>

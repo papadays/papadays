@@ -74,13 +74,13 @@ export default class ArticleCard extends Vue {
       text-decoration: underline;
     }
 
-    & /deep/ .Link {
+    & ::v-deep .Link {
       font-size: $font-size-h1;
       color: $color-text-primary;
     }
   }
 
-  & /deep/ .TagList {
+  & ::v-deep .TagList {
     padding: 0;
     margin-top: $margin-item-space-default;
   }

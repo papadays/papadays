@@ -32,7 +32,7 @@ export default class TagList extends Vue {
   flex-wrap: wrap;
   padding: $padding-section-space;
 
-  & /deep/ .TagIcon {
+  & ::v-deep .TagIcon {
     margin: 2px;
   }
 }

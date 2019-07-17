@@ -3,7 +3,6 @@
     <Header />
     <nuxt />
     <Aside />
-    <About />
     <Footer />
   </div>
 </template>
@@ -12,7 +11,6 @@
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import Header from '~/components/organisms/Header.vue';
 import Aside from '~/components/organisms/Aside.vue';
-import About from '~/components/organisms/About.vue';
 import Footer from '~/components/organisms/Footer.vue';
 
 @Component({
@@ -25,7 +23,6 @@ import Footer from '~/components/organisms/Footer.vue';
   components: {
     Header,
     Aside,
-    About,
     Footer,
   },
 })

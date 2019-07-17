@@ -1,6 +1,7 @@
 <template>
   <h1 :class="$options._componentTag">
-    <i :class="fasClass" v-if="fasClass"></i>
+    <i class="fasIcon" :class="fasClass" v-if="fasClass"></i>
+    <img class="icon" :src="icon" v-if="icon" />
     {{ label }}
   </h1>
 </template>
@@ -16,6 +17,9 @@ export default class AsideSectionTitle extends Vue {
   @Prop({
     default: '',
   }) fasClass!: string;
+  @Prop({
+    default: '',
+  }) icon!: string;
 }
 </script>
 
@@ -25,5 +29,25 @@ export default class AsideSectionTitle extends Vue {
   font-size: $font-size-default;
   line-height: 1;
   padding: $padding-text-space;
+  border-bottom: dashed 3px $color-border-secondary;
+  background-image:
+    -webkit-gradient(
+      linear, 0 0, 100% 100%,
+      color-stop(.25, $color-border-secondary),
+      color-stop(.25, transparent),
+      color-stop(.5, transparent),
+      color-stop(.5, $color-border-secondary),
+      color-stop(.75, $color-border-secondary),
+      color-stop(.75, transparent),
+      to(transparent)
+    );
+  background-size: 8px 8px;
+  display: flex;
+  align-items: center;
+
+  & > .icon,
+  & > .fasIcon {
+    margin-right: $margin-item-space-default;
+  }
 }
 </style>

@@ -32,11 +32,11 @@ export default class Header extends Vue {
   grid-area: Header;
   padding: 0 calc((100vw - #{$width-content-max}) / 2);
 
-  & /deep/ .SearchForm {
+  & ::v-deep .SearchForm {
     width: 300px;
     height: 36px;
 
-    & /deep/ .Button {
+    & ::v-deep .Button {
       height: 28px;
       border-radius: 14px;
     }
