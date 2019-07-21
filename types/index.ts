@@ -4,15 +4,9 @@ export class Article {
   id!: number;
   date!: string;
   modified!: string;
-  title!: {
-    rendered: string;
-  };
-  content!: {
-    rendered: string;
-  };
-  excerpt!: {
-    rendered: string;
-  };
+  title!: string;
+  content!: string;
+  excerpt!: string;
   categories!: number[];
   tags!: number[];
   // tslint:disable-next-line

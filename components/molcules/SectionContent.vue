@@ -13,6 +13,6 @@ export default class SectionContent extends Vue {}
 
 <style lang="scss" scoped>
 .SectionContent {
-  padding: $padding-section-space;
+  padding: $padding-section-space 0;
 }
 </style>

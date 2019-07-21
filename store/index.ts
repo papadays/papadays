@@ -39,8 +39,13 @@ export const mutations: MutationTree<RootState> = {
 };
 
 export const actions: ActionTree<RootState, RootState> = {
+  async putArticle({ commit, state }, context) {
+    const res = await axios.get(`${constants.API_PATH}posts/${context.id}?_embed`);
+    formatArticleData(res.data);
+    commit('setArticle', res.data);
+  },
   async putArticleListRecent({ commit, state }, context) {
-    const res = await axios.get(`${constants.API_PATH}posts?_embed&orderby=date&per_page=5`);
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&orderby=date&per_page=6`);
     commit('setArticleListRecent', res.data);
   },
   async putCategoryList({ commit, state }, context) {
@@ -51,4 +56,10 @@ export const actions: ActionTree<RootState, RootState> = {
     const res = await axios.get(`${constants.API_PATH}tags`);
     commit('setTagList', res.data);
   },
+};
+
+export const formatArticleData = (data: any) => {
+  data.title = data.title.rendered;
+  data.content = data.content.rendered;
+  data.excerpt = data.excerpt.rendered;
 };

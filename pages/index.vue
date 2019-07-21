@@ -22,5 +22,7 @@ import Home from '~/components/templates/Home.vue';
     this.$store.dispatch('putArticleListRecent');
   },
 })
-export default class PagesHome extends Vue {}
+export default class IndexPage extends Vue {
+
+}
 </script>

@@ -1,10 +1,11 @@
 <template>
-  <tmp-article />
+  <Article />
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
-import TmpArticle from '~/components/templates/Article.vue';
+import { Component, State, Vue } from 'nuxt-property-decorator';
+
+import Article from '~/components/templates/Article.vue';
 
 @Component({
   head() {
@@ -13,8 +14,12 @@ import TmpArticle from '~/components/templates/Article.vue';
     };
   },
   components: {
-    TmpArticle,
+    Article,
+  },
+  async created() {
+    this.$store.dispatch('putArticle', { id: this.$route.query.id });
   },
 })
-export default class PagesArticle extends Vue {}
+export default class ArticlePage extends Vue {
+}
 </script>

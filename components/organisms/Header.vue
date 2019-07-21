@@ -28,7 +28,7 @@ export default class Header extends Vue {
 .Header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   grid-area: Header;
   padding: 0 calc((100vw - #{$width-content-max}) / 2);
 

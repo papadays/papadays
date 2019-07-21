@@ -15,23 +15,11 @@ export default class SectionTitle extends Vue {
 
 <style lang="scss" scoped>
 .SectionTitle {
-  position: relative;
   padding: $padding-text-space;
   background: $color-content-primary;
   color: #fff;
   font-weight: bold;
   font-size: $font-size-h1;
   line-height: 1;
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 100%;
-    left: 30px;
-    border: 15px solid transparent;
-    border-top: 15px solid $color-content-primary;
-    width: 0;
-    height: 0;
-  }
 }
 </style>

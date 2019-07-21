@@ -1,5 +1,8 @@
 <template>
   <article :class="$options._componentTag">
+    <div class="eyecatch">
+      <img class="image" :src="article._embedded['wp:featuredmedia'][0].source_url" />
+    </div>
     <header class="header">
       <CategoryIcon
         :category="article._embedded['wp:term'][0][0]"
@@ -14,7 +17,7 @@
       </span>
     </header>
     <h1 class="title">
-      <Link :url="`/article?posts=${article.id}`">
+      <Link :url="`/article?id=${article.id}`">
         {{ article.title.rendered }}
       </Link>
     </h1>
@@ -50,18 +53,31 @@ export default class ArticleCard extends Vue {
 
 <style lang="scss" scoped>
 .ArticleCard {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  margin-top: $margin-list-space;
+
+  & > .eyecatch {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+
+    & > .image {
+      width: 100%;
+    }
+  }
 
   & > .header {
     display: flex;
     align-items: center;
+    margin-top: $margin-item-space-default;
 
     & > .postdate,
     & > .update {
       font-size: $font-size-notes;
       margin-left: $margin-item-space-default;
+      color: $color-text-option;
+      font-weight: bold;
     }
   }
 

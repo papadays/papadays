@@ -26,7 +26,7 @@ import SectionContent from '~/components/molcules/SectionContent.vue';
     SectionContent,
   },
 })
-export default class Home extends Vue {
+export default class HomeTemp extends Vue {
   @State articleListRecent!: Article[];
 }
 </script>

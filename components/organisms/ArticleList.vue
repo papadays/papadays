@@ -1,6 +1,6 @@
 <template>
   <ul :class="$options._componentTag">
-    <li v-for="article in articleList" v-bind:key="article.id">
+    <li class="item" v-for="article in articleList" v-bind:key="article.id">
       <ArticleCard
         :article="article"
       />
@@ -25,3 +25,16 @@ export default class ArticleList extends Vue {
   }) articleList!: Article[];
 }
 </script>
+
+<style lang="scss" scoped>
+.ArticleList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  & > .item {
+    padding: $padding-section-space;
+    width: 50%;
+  }
+}
+</style>
