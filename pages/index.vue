@@ -14,7 +14,6 @@ import Home from '~/components/templates/Home.vue';
       title: 'ホーム',
     };
   },
-  layout: 'home',
   components: {
     Home,
   },

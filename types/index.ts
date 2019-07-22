@@ -10,7 +10,24 @@ export class Article {
   categories!: number[];
   tags!: number[];
   // tslint:disable-next-line
-  _embedded!: object;
+  _embedded!: {
+    'wp:term': [
+      [
+        {
+          id: number;
+          name: string;
+          slug: string;
+        },
+      ],
+      [
+        {
+          id: number;
+          name: string;
+          slug: string;
+        },
+      ],
+    ];
+  };
 }
 
 export class Category {

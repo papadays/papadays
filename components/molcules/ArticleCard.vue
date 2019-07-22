@@ -1,9 +1,7 @@
 <template>
   <article :class="$options._componentTag">
-    <div class="eyecatch">
-      <img class="image" :src="article._embedded['wp:featuredmedia'][0].source_url" />
-    </div>
-    <header class="header">
+    <img class="eyecatch" :src="article._embedded['wp:featuredmedia'][0].source_url" />
+    <div class="info">
       <CategoryIcon
         :category="article._embedded['wp:term'][0][0]"
       />
@@ -15,7 +13,7 @@
         <i class="fas fa-redo"></i>
         {{ article.modified | format-date }}
       </span>
-    </header>
+    </div>
     <h1 class="title">
       <Link :url="`/article?id=${article.id}`">
         {{ article.title.rendered }}
@@ -53,22 +51,19 @@ export default class ArticleCard extends Vue {
 
 <style lang="scss" scoped>
 .ArticleCard {
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   & > .eyecatch {
     width: 100%;
     height: 150px;
-    overflow: hidden;
-
-    & > .image {
-      width: 100%;
-    }
   }
 
-  & > .header {
+  & > .info {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     margin-top: $margin-item-space-default;
 
@@ -79,26 +74,30 @@ export default class ArticleCard extends Vue {
       color: $color-text-option;
       font-weight: bold;
     }
+
+    & > .postdate {
+      margin-left: auto;
+    }
   }
 
   & > .title {
     line-height: $font-size-h1;
-    margin: $margin-item-space-default auto 0;
-    display: inline-block;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    margin: $margin-item-space-default auto;
+    width: 100%;
 
     & ::v-deep .Link {
       font-size: $font-size-h1;
       color: $color-text-primary;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   & ::v-deep .TagList {
     padding: 0;
-    margin-top: $margin-item-space-default;
+    margin-top: auto;
   }
 }
 </style>

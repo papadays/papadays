@@ -16,7 +16,7 @@ import Article from '~/components/templates/Article.vue';
   components: {
     Article,
   },
-  async created() {
+  created() {
     this.$store.dispatch('putArticle', { id: this.$route.query.id });
   },
 })

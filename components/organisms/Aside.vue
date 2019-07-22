@@ -70,7 +70,7 @@ export default class Aside extends Vue {
 <style lang="scss" scoped>
 .Aside {
   grid-area: Aside;
-  
+
   & ::v-deep .AsideSectionBox {
     &:not(:first-child) {
       margin-top: $margin-aside-section-space;

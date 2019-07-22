@@ -31,7 +31,7 @@ export default class ArticleList extends Vue {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  
+
   & > .item {
     padding: $padding-section-space;
     width: 50%;
