@@ -4,7 +4,7 @@
     :action="URL"
     method="get"
   >
-    <input class="input is-rounded" type="text" placeholder="検索キーワード" v-model="searchWord">
+    <input class="input" type="text" placeholder="検索キーワード" v-model="searchWord">
     <Button
       label="検 索"
       class="is-small"
@@ -36,25 +36,33 @@ export default class SearchForm extends Vue {
 
 <style lang="scss" scoped>
 .SearchForm {
-  position: relative;
+  display: flex;
 
   > .input {
-    padding-right: 70px;
-
-    &.is-rounded {
-      width: 100%;
-    }
+    width: 80%;
+    height: 100%;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+    box-shadow: none;
+    color: $color-text-primary;
+    border-right: 0;
   }
 
   & ::v-deep .Button {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 2px;
-    margin: auto;
-    height: 90%;
+    width: 20%;
+    height: 100%;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: opacity $transition-speed-default;
+
+    &:hover {
+      opacity: $opacity-link-hover;
+    }
   }
 }
 </style>

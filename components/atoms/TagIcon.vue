@@ -27,10 +27,11 @@ export default class TagIcon extends Vue {
   background-color: $color-content-secondary;
   color: $color-text-white;
   padding: 5px 8px 5px 20px;
-  font-size: $font-size-notes;
+  font-size: $font-size-icon;
   border-radius: $border-radius-content;
   font-weight: bold;
   position: relative;
+  transition: opacity $transition-speed-default;
 
   &:hover {
     opacity: $opacity-link-hover;

@@ -28,13 +28,9 @@ export default class ArticleList extends Vue {
 
 <style lang="scss" scoped>
 .ArticleList {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
   & > .item {
-    padding: $padding-section-space;
-    width: 50%;
+    width: 100%;
+    margin-top: $margin-list-space;
   }
 }
 </style>

@@ -45,7 +45,7 @@ export const actions: ActionTree<RootState, RootState> = {
     commit('setArticle', res.data);
   },
   async putArticleListRecent({ commit, state }, context) {
-    const res = await axios.get(`${constants.API_PATH}posts?_embed&orderby=date&per_page=6`);
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&orderby=date&per_page=5`);
     commit('setArticleListRecent', res.data);
   },
   async putCategoryList({ commit, state }, context) {

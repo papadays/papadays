@@ -33,7 +33,7 @@ export default class TagList extends Vue {
   padding: $padding-section-space;
 
   & ::v-deep .TagIcon {
-    margin: 2px;
+    margin: 5px 3px;
   }
 }
 </style>

@@ -1,27 +1,25 @@
 <template>
   <article :class="$options._componentTag">
-    <img class="eyecatch" :src="article._embedded['wp:featuredmedia'][0].source_url" />
-    <div class="info">
-      <CategoryIcon
-        :category="article._embedded['wp:term'][0][0]"
-      />
-      <span class="postdate">
-        <i class="fas fa-pencil-alt"></i>
-        {{ article.date | format-date }}
-      </span>
-      <span class="update">
-        <i class="fas fa-redo"></i>
-        {{ article.modified | format-date }}
-      </span>
+    <div class="category">
+      <img class="eyecatch" :src="getImgSrc(article._embedded['wp:term'][0][0].slug)" />
+      <CategoryIcon class="icon" :category="article._embedded['wp:term'][0][0]" />
     </div>
-    <h1 class="title">
-      <Link :url="`/article?id=${article.id}`">
-        {{ article.title.rendered }}
-      </Link>
-    </h1>
-    <TagList
-      :tagList="article._embedded['wp:term'][1]"
-    />
+    <div class="detail">
+      <header class="info">
+        <span class="postdate">
+          <i class="fas fa-pencil-alt"></i>
+          {{ article.date | calc-days }}
+        </span>
+      </header>
+      <h1 class="title">
+        <Link :url="`/article?id=${article.id}`">
+          {{ article.title.rendered }}
+        </Link>
+      </h1>
+      <TagList
+        :tagList="article._embedded['wp:term'][1]"
+      />
+    </div>
   </article>
 </template>
 
@@ -46,6 +44,10 @@ export default class ArticleCard extends Vue {
   @Prop({
     required: true,
   }) article!: Article;
+
+  private getImgSrc(slug: string): string {
+    return `${constants.IMG_PATH}eyecatch-${slug}.jpg`;
+  }
 }
 </script>
 
@@ -54,50 +56,75 @@ export default class ArticleCard extends Vue {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
 
-  & > .eyecatch {
-    width: 100%;
-    height: 150px;
-  }
+  & > .category {
+    width: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    position: relative;
 
-  & > .info {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: $margin-item-space-default;
-
-    & > .postdate,
-    & > .update {
-      font-size: $font-size-notes;
-      margin-left: $margin-item-space-default;
-      color: $color-text-option;
-      font-weight: bold;
+    & > .eyecatch {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
     }
 
-    & > .postdate {
-      margin-left: auto;
-    }
-  }
+    & ::v-deep .CategoryIcon {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      margin: auto;
 
-  & > .title {
-    line-height: $font-size-h1;
-    margin: $margin-item-space-default auto;
-    width: 100%;
-
-    & ::v-deep .Link {
-      font-size: $font-size-h1;
-      color: $color-text-primary;
-
-      &:hover {
-        text-decoration: underline;
+      & > .name {
+        top: calc((100% - 100px) / 2);
       }
     }
   }
 
-  & ::v-deep .TagList {
-    padding: 0;
-    margin-top: auto;
+  & > .detail {
+    display: flex;
+    flex-direction: column;
+    padding: 0 $padding-section-space;
+    
+    & > .info {
+      display: flex;
+      font-size: $font-size-notes;
+      color: $color-text-secondary;
+      font-weight: bold;
+    }
+    
+    & > .title {
+      font-size: $font-size-h1;
+      word-break: break-all;
+      margin: $margin-item-space-small 0;
+
+      &:hover {
+        & .Link {
+          color: $color-content-secondary;
+        }
+      }
+
+      & .Link {
+        color: $color-text-primary;
+        text-decoration: none;
+        transition: color $transition-speed-default;
+      }
+    }
+
+    & ::v-deep .TagList {
+      padding: 0;
+      margin-top: auto;
+
+      & .TagIcon {
+        margin: $margin-item-space-small $margin-item-space-small 0 0;
+      }
+    }
   }
 }
 </style>

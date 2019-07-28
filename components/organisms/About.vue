@@ -1,6 +1,6 @@
 <template>
   <section :class="$options._componentTag">
-    パパとしての経歴
+    自己紹介文
   </section>
 </template>
 

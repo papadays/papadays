@@ -29,6 +29,7 @@ export default class CategoryCard extends Vue {
   justify-content: flex-start;
   padding: $padding-section-space;
   width: 100%;
+  transition: background-color $transition-speed-default;
 
   &:hover {
     text-decoration: none;

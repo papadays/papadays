@@ -1,7 +1,6 @@
 <template>
   <Link url="/categoryList" :class="$options._componentTag">
     <span class="name">
-      <i class="fas fa-folder-open"></i>
       {{ category.name }}
     </span>
   </Link>
@@ -28,17 +27,29 @@ export default class CategoryIcon extends Vue {
 <style lang="scss" scoped>
 .CategoryIcon {
   font-size: $font-size-notes;
-  padding: $padding-icon-space;
-  border: solid 1px $color-content-primary;
+  color: $color-text-primary;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color $transition-speed-default;
 
   &:hover {
-    background-color: $color-content-primary;
-    color: $color-text-white;
-    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.1);
 
-    > .name {
-      text-decoration: none;
+    & > .name {
+      background-color: lighten($color-background-category, 2%);
     }
+  }
+
+  & > .name {
+    padding: $padding-icon-space;
+    font-size: $font-size-icon;
+    text-align: center;
+    background-color: $color-background-category;
+    font-weight: bold;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 </style>
