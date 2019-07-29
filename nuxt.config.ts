@@ -13,6 +13,9 @@ const nuxtConfig: NuxtConfiguration = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'sample text of description' }
     ],
+    bodyAttrs: {
+      style: 'margin:0;',
+    },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
@@ -43,6 +46,7 @@ const nuxtConfig: NuxtConfiguration = {
   */
   plugins: [
     '~/plugins/my-filter.js',
+    '~/plugins/lib/prism.js',
   ],
 
   /*
@@ -51,8 +55,6 @@ const nuxtConfig: NuxtConfiguration = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma',
     '@nuxtjs/style-resources',
     ['@nuxtjs/moment', ['ja']],
   ],

@@ -1,3 +1,8 @@
+h1, h2, h3, h4, h5, h6, div, a, span, p {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+}
+
+
 h1 {
   margin: 0;
 }
@@ -14,4 +19,8 @@ a {
       text-decoration: underline;
     }
   }
+}
+
+ul {
+  list-style: none;
 }

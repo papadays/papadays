@@ -30,5 +30,6 @@ export default class Button extends Vue {
   font-weight: bold;
   outline: none;
   border: 0;
+  cursor: pointer;
 }
 </style>

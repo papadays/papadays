@@ -17,11 +17,16 @@ import SectionBox from '~/components/molcules/SectionBox.vue';
 import SectionTitle from '~/components/atoms/SectionTitle.vue';
 import SectionContent from '~/components/molcules/SectionContent.vue';
 
+const prism = require('~/plugins/lib/prism');
+
 @Component({
   components: {
     SectionBox,
     SectionTitle,
     SectionContent,
+  },
+  updated() {
+    prism.default.highlightAll();
   },
 })
 export default class ArticleTemp extends Vue {

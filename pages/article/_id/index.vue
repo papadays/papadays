@@ -4,7 +4,6 @@
 
 <script lang="ts">
 import { Component, State, Vue } from 'nuxt-property-decorator';
-
 import Article from '~/components/templates/Article.vue';
 
 @Component({
@@ -16,8 +15,8 @@ import Article from '~/components/templates/Article.vue';
   components: {
     Article,
   },
-  created() {
-    this.$store.dispatch('putArticle', { id: this.$route.query.id });
+  async created() {
+    await this.$store.dispatch('putArticle', { id: this.$route.query.id });
   },
 })
 export default class ArticlePage extends Vue {

@@ -45,10 +45,15 @@ export default class SearchForm extends Vue {
     border-bottom-left-radius: 16px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    border: solid 1px $color-border-primary;
     outline: none;
     box-shadow: none;
+    box-sizing: border-box;
     color: $color-text-primary;
     border-right: 0;
+    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+    font-size: $font-size-default;
+    padding: 0 10px;
   }
 
   & ::v-deep .Button {

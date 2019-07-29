@@ -31,6 +31,7 @@ export default class Header extends Vue {
   align-items: flex-end;
   grid-area: Header;
   padding: 0 calc((100vw - #{$width-content-max}) / 2);
+  box-sizing: border-box;
 
   & ::v-deep .SearchForm {
     width: 300px;

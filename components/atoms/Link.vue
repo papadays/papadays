@@ -20,6 +20,7 @@ export default class Link extends Vue {
   width: fit-content;
   height: fit-content;
   line-height: 1;
+  text-decoration: none;
 
   &:hover {
     > img {
