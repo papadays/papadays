@@ -3,7 +3,9 @@
     <SectionBox>
       <SectionTitle :label="article.title" />
       <SectionContent>
-        <article v-html="article.content"></article>
+        <ArticleContent
+          :content="article.content"
+        />
       </SectionContent>
     </SectionBox>
   </main>
@@ -12,17 +14,18 @@
 <script lang="ts">
 import { Component, Prop, Vue, State } from 'nuxt-property-decorator';
 import { Article } from '~/types';
-
-import SectionBox from '~/components/molcules/SectionBox.vue';
 import SectionTitle from '~/components/atoms/SectionTitle.vue';
+import ArticleContent from '~/components/atoms/ArticleContent.vue';
+import SectionBox from '~/components/molcules/SectionBox.vue';
 import SectionContent from '~/components/molcules/SectionContent.vue';
 
 const prism = require('~/plugins/lib/prism');
 
 @Component({
   components: {
-    SectionBox,
     SectionTitle,
+    ArticleContent,
+    SectionBox,
     SectionContent,
   },
   updated() {
@@ -37,5 +40,9 @@ export default class ArticleTemp extends Vue {
 <style lang="scss" scoped>
 .Article {
   grid-area: Main;
+
+  & ::v-deep .SectionTitle {
+    margin-bottom: 30px;
+  }
 }
 </style>

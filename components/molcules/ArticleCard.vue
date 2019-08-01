@@ -12,7 +12,7 @@
         </span>
       </header>
       <h1 class="title">
-        <Link :url="`/article?id=${article.id}`">
+        <Link :url="`/article/${article.id}`">
           {{ article.title.rendered }}
         </Link>
       </h1>
@@ -100,7 +100,7 @@ export default class ArticleCard extends Vue {
     }
     
     & > .title {
-      font-size: $font-size-h1;
+      font-size: $font-size-title;
       word-break: break-all;
       margin: $margin-item-space-small 0;
 

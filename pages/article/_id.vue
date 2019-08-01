@@ -16,7 +16,7 @@ import Article from '~/components/templates/Article.vue';
     Article,
   },
   async created() {
-    await this.$store.dispatch('putArticle', { id: this.$route.query.id });
+    await this.$store.dispatch('putArticle', { id: this.$route.params.id });
   },
 })
 export default class ArticlePage extends Vue {
