@@ -3,35 +3,41 @@
     <SectionBox>
       <SectionTitle label="最近の投稿" />
       <SectionContent>
-        <ArticleList :articleList="articleListRecent" />
+        <ArticleList :articleList="articleList" />
       </SectionContent>
     </SectionBox>
   </main>
 </template>
 
 <script lang="ts">
-import { Component, State, Vue } from 'nuxt-property-decorator';
+import { Component, Prop, Vue, State } from 'nuxt-property-decorator';
 import { Article } from '~/types';
 import ArticleList from '~/components/organisms/ArticleList.vue';
-import SectionBox from '~/components/molcules/SectionBox.vue';
 import SectionTitle from '~/components/atoms/SectionTitle.vue';
+import ArticleContent from '~/components/atoms/ArticleContent.vue';
+import SectionBox from '~/components/molcules/SectionBox.vue';
 import SectionContent from '~/components/molcules/SectionContent.vue';
+
+const prism = require('~/plugins/lib/prism');
 
 @Component({
   components: {
     ArticleList,
-    SectionBox,
     SectionTitle,
+    ArticleContent,
+    SectionBox,
     SectionContent,
   },
 })
-export default class HomeTemp extends Vue {
-  @State articleListRecent!: Article[];
+export default class ArticleListTemp extends Vue {
+  @Prop({
+    default: '',
+  }) articleList!: Article[];
 }
 </script>
 
 <style lang="scss" scoped>
-.Home {
+.ArticleList {
   grid-area: Main;
 }
 </style>

@@ -45,15 +45,19 @@ export const actions: ActionTree<RootState, RootState> = {
     commit('setArticle', res.data);
   },
   async putArticleListRecent({ commit, state }, context) {
-    const res = await axios.get(`${constants.API_PATH}posts?_embed&orderby=date&per_page=5`);
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&per_page=5`);
     commit('setArticleListRecent', res.data);
+  },
+  async putArticleListTag({ commit, state }, context) {
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&filter[tag]=nuxtdays`);
+    commit('setArticleListTag', res.data);
   },
   async putCategoryList({ commit, state }, context) {
     const res = await axios.get(`${constants.API_PATH}categories`);
     commit('setCategoryList', res.data);
   },
   async putTagList({ commit, state }, context) {
-    const res = await axios.get(`${constants.API_PATH}tags`);
+    const res = await axios.get(`${constants.API_PATH}tags/`);
     commit('setTagList', res.data);
   },
 };

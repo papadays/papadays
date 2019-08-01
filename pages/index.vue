@@ -5,7 +5,6 @@
 <script lang='ts'>
 import { Component, State, Vue } from 'nuxt-property-decorator';
 import axios from 'axios';
-
 import Home from '~/components/templates/Home.vue';
 
 @Component({
