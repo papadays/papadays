@@ -37,7 +37,6 @@
 <script lang="ts">
 import { Component, State, Vue } from 'nuxt-property-decorator';
 import { Category, Tag } from '~/types';
-
 import AsideSectionBox from '~/components/molcules/AsideSectionBox.vue';
 import AsideSectionTitle from '~/components/atoms/AsideSectionTitle.vue';
 import AsideSectionContent from '~/components/molcules/AsideSectionContent.vue';

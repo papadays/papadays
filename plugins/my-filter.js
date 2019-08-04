@@ -13,3 +13,9 @@ Vue.filter('calc-days', function (value) {
   if (!value) return ''
     return moment(value).fromNow();
 });
+
+Vue.filter('remove-html', function (value) {
+  const div = document.createElement('div');
+  div.innerHTML = value;
+  return div.textContent || div.innerText || "";
+});

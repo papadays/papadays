@@ -8,8 +8,16 @@ import Article from '~/components/templates/Article.vue';
 
 @Component({
   head() {
+    const article = this.$store.state.article;
     return {
       title: 'article',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: String(article.excerpt).replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, ''),
+        },
+      ],
     };
   },
   components: {
@@ -20,5 +28,8 @@ import Article from '~/components/templates/Article.vue';
   },
 })
 export default class ArticlePage extends Vue {
+  getRemoveHtml(html: string): string {
+    return Vue.filter('remove-html')(html);
+  }
 }
 </script>

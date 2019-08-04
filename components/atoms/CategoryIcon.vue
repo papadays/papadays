@@ -31,6 +31,8 @@ export default class CategoryIcon extends Vue {
   position: relative;
   background-color: rgba(0, 0, 0, 0.3);
   transition: background-color $transition-speed-default;
+  width: fit-content;
+  height: fit-content;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
@@ -47,9 +49,6 @@ export default class CategoryIcon extends Vue {
     background-color: $color-background-category;
     font-weight: bold;
     text-decoration: none;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 }
 </style>

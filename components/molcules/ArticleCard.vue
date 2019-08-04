@@ -83,6 +83,9 @@ export default class ArticleCard extends Vue {
 
       & > .name {
         top: calc((100% - 100px) / 2);
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
   }

@@ -57,7 +57,7 @@ export const actions: ActionTree<RootState, RootState> = {
     commit('setCategoryList', res.data);
   },
   async putTagList({ commit, state }, context) {
-    const res = await axios.get(`${constants.API_PATH}tags/`);
+    const res = await axios.get(`${constants.API_PATH}tags?per_page=100&orderby=count&order=desc`);
     commit('setTagList', res.data);
   },
 };
