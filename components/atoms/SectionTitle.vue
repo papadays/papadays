@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="$options._componentTag">{{ label }}</h1>
+  <h1 :class="$options._componentTag" v-cloak>{{ label }}</h1>
 </template>
 
 <script lang="ts">

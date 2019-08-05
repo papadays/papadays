@@ -1,7 +1,7 @@
 <template>
-  <Link url="/articleList" :class="$options._componentTag">
-    <span class="name">{{ category.name }}</span>
-    <span class="count">{{ category.count }} 記事</span>
+  <Link :url="`/categoryList/${category.id}?category=${category.name}`" :class="$options._componentTag">
+    <span class="name" v-cloak>{{ category.name }}</span>
+    <span class="count" v-cloak>{{ category.count }} 記事</span>
   </Link>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <button :type="type" class="button" :class="$options._componentTag">
+  <button :type="type" class="button" :class="$options._componentTag" v-cloak>
     {{ label }}
   </button>
 </template>

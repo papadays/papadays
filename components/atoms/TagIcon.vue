@@ -1,6 +1,6 @@
 <template>
-  <Link url="/tagList" :class="$options._componentTag">
-    <span class="name">{{ tag.name }}</span>
+  <Link :url="`/tagList/${tag.id}?tag=${tag.name}`" :class="$options._componentTag">
+    <span class="name" v-cloak>{{ tag.name }}</span>
   </Link>
 </template>
 

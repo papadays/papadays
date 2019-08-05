@@ -9,7 +9,7 @@ export const state = (): RootState => ({
   articleListRecent: [],
   articleListCategory: [],
   articleListTag: [],
-  articleListSearchWord: [],
+  articleListKeyword: [],
   categoryList: [],
   tagList: [],
 });
@@ -27,8 +27,8 @@ export const mutations: MutationTree<RootState> = {
   setArticleListTag(state: RootState, articleListTag: Article[]) {
     state.articleListTag = articleListTag;
   },
-  setArticleListSearchWord(state: RootState, articleListSearchWord: Article[]) {
-    state.articleListSearchWord = articleListSearchWord;
+  setArticleListKeyword(state: RootState, articleListKeyword: Article[]) {
+    state.articleListKeyword = articleListKeyword;
   },
   setCategoryList(state: RootState, categoryList: Category[]) {
     state.categoryList = categoryList;
@@ -49,8 +49,17 @@ export const actions: ActionTree<RootState, RootState> = {
     commit('setArticleListRecent', res.data);
   },
   async putArticleListTag({ commit, state }, context) {
-    const res = await axios.get(`${constants.API_PATH}posts?_embed&filter[tag]=nuxtdays`);
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&tags=${context.id}`);
     commit('setArticleListTag', res.data);
+  },
+  async putArticleListCategory({ commit, state }, context) {
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&categories=${context.id}`);
+    commit('setArticleListCategory', res.data);
+  },
+  async putArticleListKeyword({ commit, state }, context) {
+    const res = await axios.get(`${constants.API_PATH}posts?_embed&search="${context.keyword}"`);
+    console.log(`${constants.API_PATH}posts?_embed&search="${context.keyword}"`);
+    commit('setArticleListKeyword', res.data);
   },
   async putCategoryList({ commit, state }, context) {
     const res = await axios.get(`${constants.API_PATH}categories`);

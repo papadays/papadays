@@ -6,13 +6,19 @@
     </div>
     <div class="detail">
       <header class="info">
-        <span class="postdate">
-          <i class="fas fa-pencil-alt"></i>
-          {{ article.date | calc-days }}
+        <span class="date">
+          <span v-if="isHome()" v-cloak>
+            <i class="fas fa-pencil-alt"></i>
+            {{ article.date | calc-days }}
+          </span>
+          <span v-if="!isHome()" v-cloak>
+            <i class="fas fa-pencil-alt"></i>
+            {{ article.date | format-date }}
+          </span>
         </span>
       </header>
       <h1 class="title">
-        <Link :url="`/article/${article.id}`">
+        <Link :url="`/article/${article.id}`" v-cloak>
           {{ article.title.rendered }}
         </Link>
       </h1>
@@ -47,6 +53,10 @@ export default class ArticleCard extends Vue {
 
   private getImgSrc(slug: string): string {
     return `${constants.IMG_PATH}eyecatch-${slug}.jpg`;
+  }
+
+  private isHome():boolean {
+    return this.$route.name === 'index';
   }
 }
 </script>

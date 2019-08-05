@@ -1,5 +1,6 @@
 <template>
   <ul :class="$options._componentTag">
+    <li class="notfound" v-if="!articleList.length">該当する記事が見つかりませんでした。</li>
     <li class="item" v-for="article in articleList" v-bind:key="article.id">
       <ArticleCard
         :article="article"
@@ -28,6 +29,11 @@ export default class ArticleList extends Vue {
 
 <style lang="scss" scoped>
 .ArticleList {
+  & > .notfound {
+    margin: $margin-section-space * 2 0;
+    font-size: $font-size-large;
+    text-align: center;
+  }
   & > .item {
     width: 100%;
     margin-top: $margin-list-space;

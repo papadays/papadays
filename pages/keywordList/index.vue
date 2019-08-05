@@ -1,7 +1,7 @@
 <template>
   <ArticleList
-    :title="`「${$route.query.tag}」タグの記事一覧`"
-    :articleList="articleListTag"
+    :title="`「${$route.query.keyword}」の検索結果 （${articleListKeyword.length}件）`"
+    :articleList="articleListKeyword"
   />
 </template>
 
@@ -21,10 +21,10 @@ import ArticleList from '~/components/templates/ArticleList.vue';
     ArticleList,
   },
   async created() {
-    this.$store.dispatch('putArticleListTag', { id: this.$route.params.id });
+    this.$store.dispatch('putArticleListKeyword', { keyword: this.$route.query.keyword });
   },
 })
-export default class TagListPage extends Vue {
-  @State articleListTag!: Article[];
+export default class KeywordList extends Vue {
+  @State articleListKeyword!: Article[];
 }
 </script>

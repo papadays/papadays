@@ -10,7 +10,7 @@ import Article from '~/components/templates/Article.vue';
   head() {
     const article = this.$store.state.article;
     return {
-      title: 'article',
+      title: article.title,
       meta: [
         {
           hid: 'description',

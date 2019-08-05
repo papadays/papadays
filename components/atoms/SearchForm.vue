@@ -1,10 +1,10 @@
 <template>
   <form
     :class="$options._componentTag"
-    :action="URL"
+    action="/keywordList"
     method="get"
   >
-    <input class="input" type="text" placeholder="検索キーワード" v-model="searchWord">
+    <input class="input" type="text" placeholder="検索キーワード" name="keyword" :value="$route.query.keyword">
     <Button
       label="検 索"
       class="is-small"
@@ -26,11 +26,6 @@ const constants = require('~/plugins/my-constants');
   },
 })
 export default class SearchForm extends Vue {
-  private searchWord: string = '';
-
-  public get URL(): string {
-    return `/searchWordList?searchWord=${this.searchWord}`;
-  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <ArticleList
-    :title="`「${$route.query.tag}」タグの記事一覧`"
-    :articleList="articleListTag"
+    :title="`「${$route.query.category}」カテゴリーの記事一覧`"
+    :articleList="articleListCategory"
   />
 </template>
 
@@ -21,10 +21,10 @@ import ArticleList from '~/components/templates/ArticleList.vue';
     ArticleList,
   },
   async created() {
-    this.$store.dispatch('putArticleListTag', { id: this.$route.params.id });
+    this.$store.dispatch('putArticleListCategory', { id: this.$route.params.id });
   },
 })
-export default class TagListPage extends Vue {
-  @State articleListTag!: Article[];
+export default class CategoryListPage extends Vue {
+  @State articleListCategory!: Article[];
 }
 </script>

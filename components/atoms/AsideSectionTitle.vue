@@ -1,5 +1,5 @@
 <template>
-  <h1 :class="$options._componentTag">
+  <h1 :class="$options._componentTag" v-cloak>
     <i class="fasIcon" :class="fasClass" v-if="fasClass"></i>
     <img class="icon" :src="icon" v-if="icon" />
     {{ label }}

@@ -1,7 +1,7 @@
 <template>
   <main :class="$options._componentTag">
     <SectionBox>
-      <SectionTitle label="最近の投稿" />
+      <SectionTitle :label="title" />
       <SectionContent>
         <ArticleList :articleList="articleList" />
       </SectionContent>
@@ -31,6 +31,10 @@ const prism = require('~/plugins/lib/prism');
 })
 export default class ArticleListTemp extends Vue {
   @Prop({
+    required: true,
+  }) title!: string;
+
+  @Prop({
     default: '',
   }) articleList!: Article[];
 }
@@ -39,5 +43,10 @@ export default class ArticleListTemp extends Vue {
 <style lang="scss" scoped>
 .ArticleList {
   grid-area: Main;
+
+  & .count {
+    margin-top: $margin-item-space-default;
+    font-size: $font-size-large;
+  }
 }
 </style>

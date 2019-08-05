@@ -5,7 +5,7 @@ export interface RootState {
   articleListRecent: Article[];
   articleListCategory: Article[];
   articleListTag: Article[];
-  articleListSearchWord: Article[];
+  articleListKeyword: Article[];
   categoryList: Category[];
   tagList: Tag[];
 }

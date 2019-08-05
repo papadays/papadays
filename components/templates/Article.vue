@@ -4,11 +4,11 @@
       <SectionTitle :label="article.title" />
       <CategoryIcon class="icon" :category="categoryData" />
       <p class="date">
-        <span class="item">
+        <span class="item" v-cloak>
           <i class="fas fa-pencil-alt"></i>
           {{ article.date | format-date }}
         </span>
-        <span class="item">
+        <span class="item" v-cloak>
           <i class="fas fa-redo-alt"></i>
           {{ article.modified | format-date }}
         </span>
