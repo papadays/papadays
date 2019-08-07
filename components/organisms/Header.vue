@@ -1,7 +1,7 @@
 <template>
   <header :class="$options._componentTag">
     <Link url="/">
-      <img :src="logoMain" />
+      <img :src="logoMain" class="logo" />
     </Link>
     <SearchForm />
   </header>
@@ -30,16 +30,36 @@ export default class Header extends Vue {
   justify-content: space-between;
   align-items: flex-end;
   grid-area: Header;
-  padding: 0 calc((100vw - #{$width-content-max}) / 2);
+  padding: 0 calc((100% - #{$width-content-max}) / 2);
   box-sizing: border-box;
+
+  @include responsive() {
+    padding: 0 $padding-sp-space;
+  }
+
+  & ::v-deep .Link {
+    & > .logo {
+      @include responsive() {
+        width: 155px;
+      }
+    }
+  }
 
   & ::v-deep .SearchForm {
     width: 300px;
     height: 36px;
 
+    @include responsive() {
+      width: 50%;
+      height: 30px;
+    }
+
     & ::v-deep .Button {
-      height: 28px;
-      border-radius: 14px;
+      border-radius: 18px;
+
+      @include responsive() {
+        border-radius: 13px;
+      }
     }
   }
 }

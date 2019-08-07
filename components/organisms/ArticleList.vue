@@ -1,6 +1,5 @@
 <template>
   <ul :class="$options._componentTag">
-    <li class="notfound" v-if="!articleList.length">該当する記事が見つかりませんでした。</li>
     <li class="item" v-for="article in articleList" v-bind:key="article.id">
       <ArticleCard
         :article="article"
@@ -29,10 +28,13 @@ export default class ArticleList extends Vue {
 
 <style lang="scss" scoped>
 .ArticleList {
-  & > .notfound {
+  &:empty::after {
+    content: "該当する記事が見つかりません。";
+    display: block;
     margin: $margin-section-space * 2 0;
     font-size: $font-size-large;
     text-align: center;
+    height: 100px;
   }
   & > .item {
     width: 100%;

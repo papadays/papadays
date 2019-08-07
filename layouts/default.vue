@@ -30,7 +30,6 @@ export default class Default extends Vue {
   display: grid;
   grid-gap: 20px $margin-section-space;
   margin: 0 auto;
-  background-color: $color-background-primary;
   grid-template:
     "Header Header Header Header" #{$height-header}
     ". Main Aside ." auto
@@ -38,10 +37,12 @@ export default class Default extends Vue {
     1fr #{$width-content-main} #{$width-content-aside} 1fr;
 
   @include responsive() {
+    grid-gap: $margin-sp-space 0;
     grid-template:
-      "Header" (#{$height-header} / 2)
+      "Header" #{$height-header-sp}
       "Main" auto
-      "Footer" (#{$height-footer} / 2) /
+      "Aside" auto
+      "Footer" #{$height-footer-sp} /
       100%;
   }
 }

@@ -14,7 +14,7 @@ const nuxtConfig: NuxtConfiguration = {
       { hid: 'description', name: 'description', content: 'sample text of description' }
     ],
     bodyAttrs: {
-      style: 'margin:0;',
+      style: 'margin: 0;background-color: #fffaf6;',
     },
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -56,6 +56,7 @@ const nuxtConfig: NuxtConfiguration = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@/plugins/lib/moment-reset',
     ['@nuxtjs/moment', ['ja']],
   ],
   /*

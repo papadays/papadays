@@ -37,6 +37,10 @@ export default class ArticleContent extends Vue {
     font-weight: bold;
     word-break: break-all;
     line-height: 1.8;
+
+    @include responsive() {
+      padding: 0 $padding-sp-space;
+    }
   }
 
   & ::v-deep p {
@@ -138,6 +142,10 @@ export default class ArticleContent extends Vue {
   & ::v-deep pre {
     border-radius: $border-radius-content;
 
+    @include responsive() {
+      border-radius: 0;
+    }
+
     & code {
       background-color: transparent;
       padding: 0;
@@ -155,6 +163,14 @@ export default class ArticleContent extends Vue {
   & ::v-deep .prism {
     & code {
       color: #cc99cd;
+    }
+  }
+
+  & ::v-deep .wp-block-image {
+    max-width: 100%;
+
+    & > img {
+      width: 100%;
     }
   }
 }

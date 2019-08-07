@@ -70,6 +70,10 @@ export default class Aside extends Vue {
 .Aside {
   grid-area: Aside;
 
+  @include responsive() {
+    padding: 0 $padding-sp-space;
+  }
+
   & ::v-deep .AsideSectionBox {
     &:not(:first-child) {
       margin-top: $margin-aside-section-space;

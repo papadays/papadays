@@ -46,9 +46,12 @@ export default class SearchForm extends Vue {
     box-sizing: border-box;
     color: $color-text-primary;
     border-right: 0;
-    box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
     font-size: $font-size-default;
     padding: 0 10px;
+    
+    @include responsive() {
+      width: 70%;
+    }
   }
 
   & ::v-deep .Button {
@@ -59,6 +62,11 @@ export default class SearchForm extends Vue {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     transition: opacity $transition-speed-default;
+    
+    @include responsive() {
+      width: 30%;
+      padding: 0;
+    }
 
     &:hover {
       opacity: $opacity-link-hover;

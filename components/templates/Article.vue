@@ -74,6 +74,10 @@ export default class ArticleTemp extends Vue {
 
     & > .CategoryIcon {
       margin-right: $margin-item-space-default;
+
+      @include responsive() {
+        margin-left: $margin-sp-space;
+      }
     }
 
     & > .date {
@@ -92,6 +96,10 @@ export default class ArticleTemp extends Vue {
     & > .TagList {
       padding: 0;
       margin-bottom: $margin-section-space;
+
+      @include responsive() {
+        margin-left: $margin-sp-space;
+      }
 
       & > .TagIcon {
         margin: 5px 3px 0 0;
