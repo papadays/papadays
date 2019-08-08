@@ -20,6 +20,13 @@
         />
       </SectionContent>
     </SectionBox>
+    <SectionBox>
+      <SectionTitle label="最近の投稿" />
+      <SectionContent>
+        <ArticleList :articleList="articleListRecent" />
+      </SectionContent>
+    </SectionBox>
+    <ButtonScrollTop />
   </main>
 </template>
 
@@ -32,6 +39,8 @@ import SectionBox from '~/components/molcules/SectionBox.vue';
 import SectionContent from '~/components/molcules/SectionContent.vue';
 import CategoryIcon from '~/components/atoms/CategoryIcon.vue';
 import TagList from '~/components/organisms/TagList.vue';
+import ArticleList from '~/components/organisms/ArticleList.vue';
+import ButtonScrollTop from '~/components/atoms/ButtonScrollTop.vue';
 
 const prism = require('~/plugins/lib/prism');
 
@@ -43,6 +52,8 @@ const prism = require('~/plugins/lib/prism');
     SectionContent,
     CategoryIcon,
     TagList,
+    ArticleList,
+    ButtonScrollTop,
   },
   updated() {
     prism.default.highlightAll();
@@ -50,6 +61,7 @@ const prism = require('~/plugins/lib/prism');
 })
 export default class ArticleTemp extends Vue {
   @State article!: Article;
+  @State articleListRecent!: Article[];
 
   private get categoryData(): object {
     if (!this.article._embedded) return {};
@@ -68,6 +80,8 @@ export default class ArticleTemp extends Vue {
   grid-area: Main;
 
   & ::v-deep .SectionBox {
+    margin-bottom: $margin-section-space * 3;
+
     & > .SectionTitle {
       margin-bottom: $margin-item-space-default;
     }

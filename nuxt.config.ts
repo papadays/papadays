@@ -47,6 +47,7 @@ const nuxtConfig: NuxtConfiguration = {
   plugins: [
     '~/plugins/my-filter.js',
     '~/plugins/lib/prism.js',
+    '~/plugins/lib/vue-scrollto',
   ],
 
   /*

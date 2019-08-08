@@ -9,7 +9,6 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { Category } from '~/types';
-
 import Link from '~/components/atoms/Link.vue';
 
 @Component({

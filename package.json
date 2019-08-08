@@ -28,7 +28,8 @@
     "tslint-config-airbnb": "^5.11.1",
     "tslint-loader": "^3.5.4",
     "typescript": "^3.5.1",
-    "vue-parser": "^1.1.6"
+    "vue-parser": "^1.1.6",
+    "vue-scrollto": "^2.15.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.10.2",

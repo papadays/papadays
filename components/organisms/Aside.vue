@@ -22,15 +22,6 @@
         />
       </AsideSectionContent>
     </AsideSectionBox>
-
-    <AsideSectionBox class="-subcontent">
-      <AsideSectionTitle
-        label="このブログを作った人"
-        :icon="logoPointMono" />
-      <AsideSectionContent>
-        <About />
-      </AsideSectionContent>
-    </AsideSectionBox>
   </aside>
 </template>
 
@@ -42,7 +33,6 @@ import AsideSectionTitle from '~/components/atoms/AsideSectionTitle.vue';
 import AsideSectionContent from '~/components/molcules/AsideSectionContent.vue';
 import CategoryList from '~/components/organisms/CategoryList.vue';
 import TagList from '~/components/organisms/TagList.vue';
-import About from '~/components/organisms/About.vue';
 
 @Component({
   components: {
@@ -51,7 +41,6 @@ import About from '~/components/organisms/About.vue';
     AsideSectionContent,
     CategoryList,
     TagList,
-    About,
   },
   async created() {
     this.$store.dispatch('putCategoryList');
